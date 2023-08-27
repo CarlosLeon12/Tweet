@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script>
+        
+        function agregarTexto() {
+            var inputElement = document.getElementById("inputText");
+            var outputDiv = document.getElementById("outputDiv");
+
+            var texto = inputElement.value;
+            var nuevoParrafo = document.createElement("p");
+            nuevoParrafo.textContent = texto;
+
+            outputDiv.appendChild(nuevoParrafo);
+
+            inputElement.value = "";
+        }
+
+        function borrarConversacion() {
+            var outputDiv = document.getElementById("outputDiv");
+            outputDiv.innerHTML = ""; // Elimina todos los elementos dentro del div
+        }
+
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Twit</title>
+</head>
+<body>
+
+    <div>
+        <div style="margin-top: 150px;">
+        <fieldset class="cuadro">
+
+            <div class="container">
+
+            <div class="div1" style="margin-top: 80px;">
+               
+                    <label style="font-size: 45px;" for="">Tweet</label><br><br><br>
+                    <label style="font-size: 25px;" for="">Que piensas el dia de hoy?</label>
+                    <input class="inputTweet" type="text" id="inputText" placeholder="Introduce tu texto">
+
+                    <button class="botonCom" onclick="agregarTexto()">Compartir</button>
+                    <button class="botonCom" onclick="borrarConversacion()">Borrar</button>
+                    
+                    
+            </div>
+
+            <div class="div2">
+                <fieldset class="separacion">
+                    <div class="tweet" id="outputDiv"></div>
+                </fieldset>
+            </div>
+
+
+            </div>
+
+        </fieldset>
+    </div>
+    </div>
+    
+</body>
+</html>
